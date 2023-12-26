@@ -1,0 +1,18 @@
+import random
+
+def random_rast(width, height):
+  """Генерує випадковий раст з заданими шириною та висотою."""
+
+  rast = []
+  for y in range(height):
+    row = []
+    for x in range(width):
+      row.append(random.randint(0, 255))
+    rast.append(row)
+
+  return rast
+
+rast = random_rast(100, 100)
+
+with open("random.rast", "wb") as f:
+  f.write(rast)
